@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flexbox="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+
+android:background="@drawable/background_skyblue"
+    android:padding="25dp">
+
+    <!-- Multi-line Heading -->
+    <TextView
+        android:id="@+id/interests_heading1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your"
+        android:textSize="48sp"
+        android:textStyle="bold"
+android:layout_marginTop="60dp"
+
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/interests_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/interests_heading1"
+        android:text="Interests"
+        android:textSize="45sp"
+        android:textStyle="bold"
+
+        android:gravity="center" />
+
+    <!-- Selection limit note -->
+    <TextView
+        android:id="@+id/interests_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/interests_heading"
+        android:layout_marginTop="8dp"
+        android:text="You may select up to 10 topics"
+        android:textSize="20sp"
+android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <!-- FlexboxLayout for IT topics -->
+    <com.google.android.flexbox.FlexboxLayout
+
+        android:id="@+id/topic_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/interests_note"
+        android:layout_marginTop="18dp"
+        flexbox:flexWrap="wrap"
+        flexbox:justifyContent="flex_start"
+        flexbox:alignItems="flex_start">
+
+
+
+        <com.google.android.material.chip.Chip
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_cloud"
+            android:textSize="18sp"
+            android:layout_margin="3dp"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Cloud Computing"
+            android:checkable="true"
+
+
+           />
+
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_cybersecurity"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Cybersecurity"
+            android:checkable="true"
+            />
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_data_science"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Data Science"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_ai_ml"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="AI and ML"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_web_dev1"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Web Development"
+            android:checkable="true"
+           />
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_web_dev"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="React js "
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_mobile_dev"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Mobile Development"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_devops"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="DevOps"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_ui_ux"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="UI/UX Design"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_blockchain"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Blockchain"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_game_dev"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Game Development"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_networking"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Networking"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_iot"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Internet of Things (IoT)"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_database"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Databases"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_software_testing"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Software Testing"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_virtualization"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Virtualization"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_cloud_security"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Cloud Security"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_ai_ethics"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="AI Ethics"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_big_data"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Big Data"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_edge_computing"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            flexbox:chipBackgroundColor="#00f6f4"
+            android:text="Edge Computing"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chip_robotics"
+            android:layout_margin="3dp"
+            android:padding="4dp"
+            android:textSize="19sp"
+            android:background="@drawable/checkboxes"
+            android:text="Robotics"
+            flexbox:chipBackgroundColor="#00f6f4"
+
+            android:checkable="true" />
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:text="Next"
+        android:textSize="18sp"
+        android:padding="20dp"
+        android:backgroundTint="#03ff75"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textAllCaps="false"/>
+</RelativeLayout>

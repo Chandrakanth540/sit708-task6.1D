@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    android:background="@drawable/background_skyblue"
+
+    tools:context=".Login">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome,"
+        android:textSize="37sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.01"
+        android:layout_marginTop="180dp"
+        />
+
+    <TextView
+        android:id="@+id/student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome"
+android:letterSpacing="0.02"
+        android:text="Student!"
+        android:textSize="60sp"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:id="@+id/lslearn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/student"
+android:layout_marginBottom="80dp"
+        android:text="Let's start learning!"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.01"
+        />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lslearn"
+        android:hint="Username"
+        android:padding="13dp"
+        android:textColorHint="#77777d"
+        android:inputType="textEmailAddress"
+android:background="@drawable/edittext_border"
+        android:layout_marginBottom="18dp"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:hint="Password"
+        android:padding="13dp"
+        android:textColorHint="#77777d"
+        android:inputType="textPassword"
+
+        android:background="@drawable/edittext_border"
+        android:layout_marginBottom="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_marginBottom="16dp"
+        android:text="Login"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:letterSpacing="0.02"
+        android:background="@drawable/square_button"
+        android:textAllCaps="false"
+        />
+
+    <TextView
+        android:id="@+id/needanaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submit"
+        android:layout_centerHorizontal="true"
+        android:text="Need an Account?"
+        android:textStyle="bold"
+        android:letterSpacing="0.01"
+        android:textSize="16sp"
+        android:textColor="@color/black"/>
+</RelativeLayout>

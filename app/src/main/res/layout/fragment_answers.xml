@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_skyblue"
+    android:padding="20dp"
+    tools:context=".Answers">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="5dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:id="@+id/head1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/generated_bg"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/black_ai"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="AI Icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Answered by AI"
+                android:textSize="17sp"
+                android:letterSpacing="0.03"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- Title -->
+        <TextView
+
+            android:layout_marginTop="20dp"
+            android:id="@+id/head2"
+            android:layout_below="@id/head1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Answers"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="53dp" />
+
+        <!-- Question 1 -->
+        <LinearLayout
+            android:id="@+id/question1_block"
+            android:layout_below="@id/head2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/back_answer"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="15dp"
+            android:layout_marginTop="50dp"
+
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+android:textStyle="bold"
+                android:textSize="16dp"
+                android:letterSpacing="0.03"
+                android:textColor="@color/white"
+                android:text="1. Question 1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:id="@+id/response1"
+                android:textColor="#D5DBDB"
+                android:textStyle="bold"
+
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:elevation="4dp"
+                android:gravity="fill_horizontal"
+                android:text="Response about question 1" />
+        </LinearLayout>
+
+        <!-- Question 2 -->
+        <LinearLayout
+            android:id="@+id/question2_block"
+            android:layout_below="@id/question1_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="15dp"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/back_answer"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="3dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:letterSpacing="0.03"
+                android:text="2. Question 2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#D5DBDB"
+                android:padding="3dp"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:elevation="4dp"
+                android:gravity="fill_horizontal"
+                android:textStyle="bold"
+
+                android:id="@+id/response2"
+                android:text="Response about question 2" />
+        </LinearLayout>
+
+        <!-- Question 3 -->
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/question3_block"
+            android:layout_below="@id/question2_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="15dp"
+            android:background="@drawable/back_answer"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="3dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:letterSpacing="0.03"
+                android:text="3. Question 3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#D5DBDB"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:elevation="4dp"
+                android:gravity="fill_horizontal"
+                android:padding="3dp"
+                android:textStyle="bold"
+
+                android:id="@+id/response3"
+                android:text="Response about question 3" />
+        </LinearLayout>
+        <Button
+           android:layout_below="@id/question3_block"
+
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="80dp"
+            android:text="Submit"
+            android:textSize="20sp"
+            android:padding="20dp"
+            android:backgroundTint="#03ff75"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+</ScrollView>
