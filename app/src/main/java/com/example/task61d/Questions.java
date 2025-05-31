@@ -76,6 +76,11 @@ public class Questions extends Fragment {
 
         DBHelper db = new DBHelper(getContext());
         User user = db.getUserDetails(User.getCurrentUser().getUsername());
+        if (user == null) {
+            Toast.makeText(getContext(), "User not found.", Toast.LENGTH_SHORT).show();
+            return view;
+        }
+
 
         List<String> questions = new ArrayList<>();
         List<List<String>> options = new ArrayList<>();
@@ -85,7 +90,7 @@ public class Questions extends Fragment {
         question_frame.setVisibility(View.GONE);
         submitButton.setVisibility(View.GONE);
         question2_preview_frame.setVisibility(View.GONE);
-
+DBHelper dbHelper=new DBHelper(getContext());
         QuizFetcher.fetch(getContext(), user.getInterests(), new QuizFetcher.QuizCallback() {
             @Override
             public void onSuccess(ArrayList<String> quizItems) {
@@ -132,6 +137,10 @@ public class Questions extends Fragment {
                     a3.setText(options.get(2).get(0));
                     b3.setText(options.get(2).get(1));
                     c3.setText(options.get(2).get(2));
+                    Log.d("TAG", options.get(0).get(0)+" "+options.get(0).get(1)+options.get(0).get(2));
+                    Log.d("TAG", options.get(1).get(0)+" "+options.get(1).get(1)+options.get(1).get(2));
+                    Log.d("TAG", options.get(2).get(0)+" "+options.get(2).get(1)+options.get(2).get(2));
+
                 }
 
                 progressBar.setVisibility(View.GONE);
@@ -159,6 +168,9 @@ public class Questions extends Fragment {
                 question2_preview_frame.setVisibility(View.GONE);
                 question2_full_frame.setVisibility(View.VISIBLE);
                 question3_preview_frame.setVisibility(View.VISIBLE);
+                List<String> options1 = Arrays.asList(options.get(0).get(0),options.get(0).get(1),options.get(0).get(2),answer1,currentOptions.get(0));
+                dbHelper.insertQuestionWithOptions(user.getUsername(), questions.get(0), options1);
+                Toast.makeText(getContext(), "inserted", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getContext(), "Please select an option", Toast.LENGTH_SHORT).show();
             }
@@ -168,10 +180,13 @@ public class Questions extends Fragment {
             int selectedId2 = rg2.getCheckedRadioButtonId();
             if (selectedId2 != -1) {
                 String answer2 = ((RadioButton) view.findViewById(selectedId2)).getText().toString();
-                summaryText.append("Q2: ").append(q2.getText().toString()).append(" ANS2: ").append(answer2).append(" CORRECT_ANS2 :"+currentOptions.get(1)).append(answer2).append(" | ");
+                summaryText.append("Q2: ").append(q2.getText().toString()).append(" USER_ANS2: ").append(answer2).append(" CORRECT_ANS2 :"+currentOptions.get(1)).append(answer2).append(" | ");
                 disableRadioGroupExcept(rg2, selectedId2);
                 question3_preview_frame.setVisibility(View.GONE);
                 question3_full_frame.setVisibility(View.VISIBLE);
+                List<String> options2 = Arrays.asList(options.get(1).get(0), options.get(1).get(1),options.get(1).get(2),answer2,currentOptions.get(1));
+                dbHelper.insertQuestionWithOptions(user.getUsername(), questions.get(1), options2);
+                Toast.makeText(getContext(), "inserted", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getContext(), "Please select an option", Toast.LENGTH_SHORT).show();
             }
@@ -182,8 +197,10 @@ public class Questions extends Fragment {
             if (selectedId3 != -1) {
                 submitButton.setText("Submitting...");
                 String answer3 = ((RadioButton) view.findViewById(selectedId3)).getText().toString();
-                summaryText.append("Q3: ").append(q3.getText().toString()).append(" ANS3: ").append(answer3).append(" CORRECT_ANS3 :"+currentOptions.get(2));
+                summaryText.append("Q3: ").append(q3.getText().toString()).append(" USER_ANS3: ").append(answer3).append(" CORRECT_ANS3 :"+currentOptions.get(2));
                 disableRadioGroupExcept(rg3, selectedId3);
+                List<String> options3 = Arrays.asList(options.get(2).get(0),options.get(2).get(1),options.get(2).get(2),answer3,currentOptions.get(2));
+                dbHelper.insertQuestionWithOptions(user.getUsername(), questions.get(2), options3);
 
                 SummaryFetcher.fetch(getContext(), summaryText.toString(), new SummaryFetcher.SummaryCallback() {
                     @Override

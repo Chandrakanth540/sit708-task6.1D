@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_skyblue"
+    android:padding="25dp"
+    tools:context=".Profile">
+
+    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="70dp"
+        android:layout_height="36dp"
+        android:background="@drawable/backbtn"
+        android:padding="10dp"
+        android:layout_marginHorizontal="3dp"
+        android:id="@+id/backBtn"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:paddingVertical="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/backimage" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/profilelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/backBtn"
+        android:layout_marginTop="50dp"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/back_answer"
+        >
+
+        <!-- Vertical Text Block -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:orientation="vertical"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chandrakanth"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:maxLines="1"
+                android:padding="3dp"
+                android:letterSpacing="0.03"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="chandra123@gmail.com"
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:maxLines="1"
+                android:letterSpacing="0.02"
+                android:padding="3dp"
+                android:ellipsize="end"/>
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Profile Image -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+
+                android:src="@drawable/ic_launcher_foreground"
+                android:layout_gravity="center"
+                android:background="@drawable/circle_background"
+                android:padding="3dp" />
+
+            <!-- Plus Icon at Bottom-Right -->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/plus_icon"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginLeft="50dp"
+               />
+        </FrameLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/notify"
+        android:layout_width="match_parent"
+        android:layout_below="@id/profilelayout"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/corners"
+        android:padding="3dp"
+        android:gravity="center_vertical">
+
+        <!-- Notification Icon -->
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:padding="2dp"
+            android:src="@drawable/notification"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center_vertical" />
+
+        <!-- Information Text -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="Display any important information here"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:padding="2dp"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notify"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/count_quest"
+        android:weightSum="2">
+
+        <!-- Left Column -->
+        <LinearLayout
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/profileques"
+            android:paddingVertical="30dp"
+            android:paddingHorizontal="10dp"
+            android:elevation="6dp"
+            android:outlineAmbientShadowColor="@android:color/black"
+            android:outlineSpotShadowColor="@android:color/black"
+            android:layout_marginEnd="8dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+
+                android:text="Total " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:text="Questions" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="45dp"
+                android:textColor="@color/white"
+                android:text=" 10" />
+        </LinearLayout>
+
+        <!-- Right Column -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/profileques"
+            android:paddingVertical="30dp"
+            android:paddingHorizontal="10dp"
+            android:elevation="6dp"
+            android:outlineAmbientShadowColor="@android:color/black"
+            android:outlineSpotShadowColor="@android:color/black"
+            android:layout_marginEnd="8dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+
+                android:text="Total " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:text="Questions" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="45dp"
+                android:textColor="@color/white"
+                android:text=" 10" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/count_quest"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:elevation="5dp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="6"
+        android:background="@drawable/profileques"
+        android:id="@+id/summerize"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            android:paddingVertical="30dp"
+            android:paddingHorizontal="10dp"
+            android:elevation="6dp"
+            android:outlineAmbientShadowColor="@android:color/black"
+            android:outlineSpotShadowColor="@android:color/black"
+            android:layout_marginEnd="8dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+
+                android:text="Total " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:text="Questions" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="45dp"
+                android:textColor="@color/white"
+                android:text=" 10" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            android:paddingVertical="30dp"
+            android:paddingHorizontal="10dp"
+            android:elevation="6dp"
+            android:outlineAmbientShadowColor="@android:color/black"
+            android:outlineSpotShadowColor="@android:color/black"
+            android:layout_marginEnd="8dp"
+            android:gravity="start">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="5dp"
+                android:background="@drawable/corners"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+                <ImageView
+
+                    android:layout_width="15dp"
+                    android:src="@drawable/black_ai"
+                    android:layout_height="15dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="13dp"
+                android:layout_marginLeft="7dp"
+android:letterSpacing="0.02"
+                android:text="Summerized by AI " />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/motivationProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/count_quest"
+                android:layout_marginTop="10dp"
+                android:text="You've answered 10 questions — keep going!"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:gravity="center" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/shareLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/summerize"
+        android:padding="16dp"
+        android:background="@drawable/square_button"
+        android:gravity="center"
+
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/shareText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Share"
+            android:letterSpacing="0.01"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:layout_marginEnd="6dp" />
+
+        <ImageView
+            android:id="@+id/shareIcon"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/sharegreen" />
+    </LinearLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

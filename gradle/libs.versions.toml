@@ -11,6 +11,9 @@ material = "1.14.0-alpha01"
 flexbox = "3.0.0"
 flexboxVersion = "3.0.0"
 volley = "1.2.1"
+playServicesWallet = "19.4.0"
+lifecycleViewmodelKtx = "2.9.0"
+lifecycleLivedataKtx = "2.9.0"
 
 
 
@@ -26,6 +29,9 @@ material = { group = "com.google.android.material", name = "material", version.r
 flexbox = { group = "com.google.android", name = "flexbox", version.ref = "flexbox" }
 google-flexbox = { group = "com.google.android.flexbox", name = "flexbox", version.ref = "flexboxVersion" }
 volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
+play-services-wallet = { group = "com.google.android.gms", name = "play-services-wallet", version.ref = "playServicesWallet" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_skyblue"
+    android:padding="25dp"
+    tools:context=".History">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <FrameLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="70dp"
+        android:layout_height="36dp"
+        android:background="@drawable/backbtn"
+        android:padding="10dp"
+        android:layout_marginHorizontal="3dp"
+        android:id="@+id/backBtn"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:paddingVertical="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/backimage" />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/history_text"
+        android:layout_below="@id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:letterSpacing="0.01"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        />
+
+    <ScrollView
+        android:layout_below="@id/history_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/questions_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <!-- Question Block 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/profileques"
+                android:layout_marginBottom="16dp">
+
+                <!-- Timestamp / Topic -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#A6ACAF"
+                    android:textSize="14sp"
+                    android:text="8:25 PM / Web-development"
+                    android:textStyle="bold"
+
+                    android:paddingBottom="8dp" />
+
+                <!-- Question -->
+                <TextView
+                    android:id="@+id/question1_his"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. What is the boiling point of water?"
+                    android:textSize="18sp"
+                    android:textColor="#D0D3D4"
+                    android:paddingBottom="12dp" />
+
+                <!-- RadioGroup -->
+                <LinearLayout
+                    android:id="@+id/answerGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/option1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D0D3D4"
+                        android:text="100°C     correct answer"
+                        android:maxLines="2"
+
+
+                        android:ellipsize="end" />
+
+                    <RadioButton
+                        android:id="@+id/option2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D0D3D4"
+                        android:text="90°C" />
+
+                    <RadioButton
+                        android:id="@+id/option3"
+                        android:textColor="#D0D3D4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100°C" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Question Block 2 -->
+            <LinearLayout
+                android:id="@+id/question_block_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+
+                android:background="@drawable/profileques"
+                android:layout_marginBottom="16dp">
+
+                <!-- Timestamp -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8:25 PM / Web-development"
+                        android:textStyle="bold"
+                        android:textColor="#A6ACAF"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:id="@+id/btn_toggle_options_q2"
+                        android:layout_width="53dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/downarrow"
+                        android:contentDescription="Toggle options"
+
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/down_arrow" />
+
+                </LinearLayout>
+
+
+                <!-- Question -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. What is the acceleration due to gravity?What is the acceleration due to gravity?"
+                    android:textSize="18sp"
+
+                    android:id="@+id/question2_his"
+
+                    android:textColor="#D0D3D4  "
+                    android:paddingBottom="8dp" />
+
+                <!-- Expand Button -->
+
+
+                <!-- Options -->
+                <LinearLayout
+                    android:id="@+id/answerGroup_q2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:paddingTop="8dp">
+
+                    <RadioButton
+                        android:id="@+id/option1_q2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D0D3D4"
+                        android:text="9.8 m/s²" />
+
+                    <RadioButton
+                        android:id="@+id/option2_q2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D0D3D4"
+                        android:text="10 m/s²" />
+
+                    <RadioButton
+                        android:id="@+id/option3_q2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D0D3D4"
+                        android:text="9.6 m/s²" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/question_block_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/profileques"
+                android:layout_marginBottom="16dp">
+
+                <!-- Timestamp -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8:25 PM / Web-development"
+                        android:textStyle="bold"
+                        android:textColor="#A6ACAF"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:id="@+id/btn_toggle_options_q3"
+                        android:layout_width="53dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/downarrow"
+                        android:contentDescription="Toggle options"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/down_arrow" />
+
+                </LinearLayout>
+
+                <!-- Question -->
+                <TextView
+                    android:id="@+id/question3_his"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. What is Newton’s Second Law of Motion?"
+                    android:textSize="18sp"
+
+                    android:textColor="#D0D3D4  "
+                    android:paddingBottom="8dp" />
+
+                <!-- Options -->
+                <LinearLayout
+                    android:id="@+id/answerGroup_q3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    style="@style/Widget.Material3.CompoundButton.RadioButton"
+                    android:paddingTop="8dp">
+
+                    <RadioButton
+                        android:id="@+id/option1_q3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D0D3D4"
+                        android:text="Force equals mass times acceleration (F=ma)" />
+
+                    <RadioButton
+                        android:id="@+id/option2_q3"
+                        android:textColor="#D0D3D4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Every action has an equal and opposite reaction" />
+
+                    <RadioButton
+                        android:id="@+id/option3_q3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D0D3D4"
+                        android:text="An object in motion stays in motion" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

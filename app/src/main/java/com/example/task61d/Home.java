@@ -1,13 +1,17 @@
 package com.example.task61d;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -62,8 +66,11 @@ public class Home extends Fragment {
         getParentFragmentManager()
                 .beginTransaction()
                 .replace(R.id.main, fragment)
+                .addToBackStack(null) // Add this line
                 .commit();
     }
+
+
 
 
     @Override
@@ -75,7 +82,20 @@ public class Home extends Fragment {
         Bundle bundle = getArguments();
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         TextView description = view.findViewById(R.id.desc);
+        AppCompatButton historyBtn=view.findViewById(R.id.historyBtn);
+        AppCompatButton upgradeBtn=view.findViewById(R.id.upgradeBtn);
+        ImageView profile =view.findViewById(R.id.profile_icon);
+        profile.setOnClickListener(v->{
+            loadFragment(new Profile());
 
+        });
+historyBtn.setOnClickListener(v->{
+    loadFragment(new History());
+});
+upgradeBtn.setOnClickListener(v->{
+    Intent intent =new Intent(getContext(),CheckoutActivity.class);
+    startActivity(intent);
+});
         if (bundle != null && bundle.containsKey("desc")) {
             String desc = bundle.getString("desc");
             Log.d("TAG", "onCreateView: " + desc); // Moved inside

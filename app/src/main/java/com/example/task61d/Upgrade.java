@@ -1,24 +1,26 @@
 package com.example.task61d;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Answers#newInstance} factory method to
+ * Use the {@link Upgrade#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Answers extends Fragment {
+public class Upgrade extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +31,7 @@ public class Answers extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Answers() {
+    public Upgrade() {
         // Required empty public constructor
     }
 
@@ -39,11 +41,11 @@ public class Answers extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Answers.
+     * @return A new instance of fragment Upgrade.
      */
     // TODO: Rename and change types and number of parameters
-    public static Answers newInstance(String param1, String param2) {
-        Answers fragment = new Answers();
+    public static Upgrade newInstance(String param1, String param2) {
+        Upgrade fragment = new Upgrade();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,35 +65,20 @@ public class Answers extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_answers, container, false);
+        View view = inflater.inflate(R.layout.fragment_upgrade, container, false);
+        FrameLayout backBtn=view.findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(v->{
+            requireActivity().getSupportFragmentManager().popBackStack();
 
-        // Step 1: Get the bundle arguments
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            String response1 = bundle.getString("response1");
-            String response2 = bundle.getString("response2");
-            String response3 = bundle.getString("response3");
+        });
+        AppCompatButton purchasebutton1 = view.findViewById(R.id.purchasebutton1);
+        purchasebutton1.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), CheckoutActivity.class);
+            startActivity(intent);
+        });
 
-            // Step 2: Use these strings (e.g., set to TextViews)
-            TextView textView1 = view.findViewById(R.id.response1);
-            TextView textView2 = view.findViewById(R.id.response2);
-            TextView textView3 = view.findViewById(R.id.response3);
-
-            textView1.setText(response1);
-            textView2.setText(response2);
-            textView3.setText(response3);
-             }
-        Button btn=view.findViewById(R.id.next_button);
-
-
-
-        // Inflate the layout for this fragment
         return view;
     }
-    private void loadFragment(androidx.fragment.app.Fragment fragment) {
-        getParentFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main, fragment)
-                .commit();
-    }
+
+
 }

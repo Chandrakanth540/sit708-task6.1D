@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,12 @@ import java.util.List;
 public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
-        super(context, "UserData.db", null, 2);
+        super(context, "UserData.db", null, 4);
+    }
+    @Override
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
     }
 
     @Override
@@ -33,12 +39,26 @@ public class DBHelper extends SQLiteOpenHelper {
                 "question TEXT, " +
                 "answer TEXT, " +
                 "FOREIGN KEY(user_id) REFERENCES Users(id))");
+        DB.execSQL("CREATE TABLE QuestionOptions (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "user_id INTEGER, " +
+                "question TEXT, " +
+                "option1 TEXT, " +
+                "option2 TEXT, " +
+                "option3 TEXT, " +
+                "option4 TEXT, " +
+                "option5 TEXT, " +
+                "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, " +
+                "FOREIGN KEY(user_id) REFERENCES Users(id))");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
         DB.execSQL("DROP TABLE IF EXISTS Questions");
         DB.execSQL("DROP TABLE IF EXISTS Users");
+        DB.execSQL("DROP TABLE IF EXISTS QuestionOptions");
+
         onCreate(DB);
     }
 
@@ -154,4 +174,55 @@ User.setCurrentUser(user);
         DB.close();
         return rows > 0;
     }
+    public boolean insertQuestionWithOptions(String username, String question, List<String> options) {
+        if (options.size() != 5) return false;
+
+        int userId = getUserId(username);
+        if (userId == -1) return false;
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("user_id", userId);
+        values.put("question", question);
+        values.put("option1", options.get(0));
+        values.put("option2", options.get(1));
+        values.put("option3", options.get(2));
+        values.put("option4", options.get(3));
+        values.put("option5", options.get(4));
+
+        long result = DB.insert("QuestionOptions", null, values);
+
+        DB.close();
+        return result != -1;
+    }
+    public List<QuestionWithOptions> getLast3QuestionsWithOptions(String username) {
+        List<QuestionWithOptions> result = new ArrayList<>();
+        int userId = getUserId(username);
+        if (userId == -1) return result;
+
+        SQLiteDatabase DB = this.getReadableDatabase();
+        Cursor cursor = DB.rawQuery(
+                "SELECT question, option1, option2, option3, option4,option5 FROM QuestionOptions " +
+                        "WHERE user_id=?",
+                new String[]{String.valueOf(userId)}
+        );
+
+        if (cursor.moveToFirst()) {
+            do {
+                String question = cursor.getString(0);
+                List<String> opts = new ArrayList<>();
+                opts.add(cursor.getString(1));
+                opts.add(cursor.getString(2));
+                opts.add(cursor.getString(3));
+                opts.add(cursor.getString(4));
+                opts.add(cursor.getString(5));
+                result.add(new QuestionWithOptions(question, opts));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        DB.close();
+        return result;
+    }
+
 }

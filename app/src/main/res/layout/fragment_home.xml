@@ -114,6 +114,35 @@
         android:src="@drawable/arrow" />
 
     </LinearLayout>
+    <!-- Buttons at the bottom -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/square_button"
+            android:id="@+id/historyBtn"
+            android:text="History" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:id="@+id/upgradeBtn"
+            android:background="@drawable/square_button"
+            android:text="Upgrade" />
+    </LinearLayout>
+
 
 
 </RelativeLayout>
